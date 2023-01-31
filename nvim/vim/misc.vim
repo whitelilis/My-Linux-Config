@@ -79,3 +79,8 @@ autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tab
 
 " 定义预先录制的 macro
 let @j = 'ysiw`\<Esc>' " 在一个 word 两侧添加上 `，例如将 abc 变为 `abc`
+
+
+" auto format
+" https://www.jvt.me/posts/2022/03/01/neovim-format-on-save/
+autocmd BufWritePre * call CocActionAsync('format')
