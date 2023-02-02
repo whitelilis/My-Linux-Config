@@ -25,7 +25,7 @@ wk.register({
 			x = { "<Plug>(coc-codeaction-selected)", "Applying codeAction to the selected region" },
 		},
 		d = { "<cmd>Telescope coc workspace_diagnostics<cr>", "show coc diagnostics" },
-		e = { "<cmd>Telescope bookmarks<cr>", "searcher browser bookmarks" },
+		-- e = { "<cmd>Telescope bookmarks<cr>", "searcher browser bookmarks" },
 		f = { "<cmd>Telescope find_files<cr>", "search files (include submodules)" },
 		F = { "<cmd>Telescope git_files<cr>", "search files (exclude submodules)" },
 		g = { "<cmd>Telescope live_grep<cr>", "live grep" },
@@ -35,6 +35,11 @@ wk.register({
 		k = { "<cmd>Telescope colorscheme<cr>", "colorscheme" },
 		m = { "<cmd>Telescope vim_bookmarks all<cr>", "search bookmarks in project" },
 		o = { "<cmd>call Outline()<cr>", "search symbols in file" },
+		-- refactor
+		q = { "<cmd>lua require('refactoring').debug.printf({below = false})<cr>", "print current symbol under cursor"},
+		w = { "<cmd>lua require('refactoring').debug.print_var({ normal = true })<cr>", "print current symbol under cursor"},
+		e = { "<cmd>lua require('refactoring').debug.cleanup({})<cr>", "clean all print"},
+		t = { "<cmd>lua require('refactoring').select_refactor()<cr>", "refactor this"},
 		-- leader p used for paste from system clipboard
 		r = { "<Plug>(coc-rename)", "rename" },
 		s = { "<cmd>Telescope coc workspace_symbols<cr>", "search symbols in project" },

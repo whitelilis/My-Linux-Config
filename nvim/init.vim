@@ -61,13 +61,14 @@ lua require 'usr.version'
 lua require 'usr.which-key'
 lua require("colorizer").setup{'css'; 'javascript'; 'vim'; html = { mode = 'foreground';}}
 lua require("nvim-surround").setup{}
-lua require('gitsigns').setup{}
+" lua require('gitsigns').setup{} " buggy
 lua require('nvim-autopairs').setup{}
 lua require('spellsitter').setup{}
 
 
 " whitelilis config
 lua require 'usr.dap.cpp'
+lua require 'usr.whitelilis.misc'
 
 " 加载 vim 配置, 参考 https://github.com/jdhao/nvim-config
 let s:core_conf_files = [

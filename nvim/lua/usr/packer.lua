@@ -1,5 +1,4 @@
 local vim = vim
--- ensure that packer is installed
 local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/opt/packer.nvim'
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   vim.api.nvim_command('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
@@ -97,5 +96,11 @@ require("packer").startup({
     use 'mfussenegger/nvim-dap' -- debug
     use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } } -- debug ui
     use 'theHamsta/nvim-dap-virtual-text' -- debug ui
+    use { "ThePrimeagen/refactoring.nvim",
+      requires = {
+        {"nvim-lua/plenary.nvim"},
+        {"nvim-treesitter/nvim-treesitter"}
+    } -- refactor  https://github.com/ThePrimeagen/refactoring.nvim
+}
   end,
 })
