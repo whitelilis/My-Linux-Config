@@ -9,10 +9,11 @@ wk.setup({
 
 wk.register({
 	-- debug
-	["<F9>"] = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "toggle breakpoint" },
-	["<F10>"] = { "<cmd>lua require'dap'.continue()<cr>", "continue" },
-	["<F11>"] = { "<cmd>lua require'dap'.step_over()<cr>", "step over" },
-	["<F12>"] = { "<cmd>lua require'dap'.step_into()<cr>", "step into" },
+	["<F5>"] = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "toggle breakpoint" },
+	["<F6>"] = { "<cmd>lua require'dap'.continue()<cr>", "continue" },
+	["<F7>"] = { "<cmd>lua require'dap'.step_over()<cr>", "step over" },
+	["<F8>"] = { "<cmd>lua require'dap'.step_into()<cr>", "step into" },
+	["<F9>"] = { "<cmd>lua require'dap'.terminate()<cr> <cmd>lua require'dapui'.close()<cr>", "exit" },
 	-- search
 	["<leader>"] = {
 		a = { "<cmd>Telescope coc code_actions<cr>", "search coc code action" },
