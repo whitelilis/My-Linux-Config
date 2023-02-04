@@ -36,10 +36,9 @@ wk.register({
 		m = { "<cmd>Telescope vim_bookmarks all<cr>", "search bookmarks in project" },
 		o = { "<cmd>call Outline()<cr>", "search symbols in file" },
 		-- refactor
-		q = { "<cmd>lua require('refactoring').debug.printf({below = false})<cr>", "print current symbol under cursor"},
+		q = { "<cmd>lua require('refactoring').debug.printf({below = true})<cr>", "print current symbol under cursor"},
 		w = { "<cmd>lua require('refactoring').debug.print_var({ normal = true })<cr>", "print current symbol under cursor"},
 		e = { "<cmd>lua require('refactoring').debug.cleanup({})<cr>", "clean all print"},
-		t = { "<cmd>lua require('refactoring').select_refactor()<cr>", "refactor this"},
 		-- leader p used for paste from system clipboard
 		r = { "<Plug>(coc-rename)", "rename" },
 		s = { "<cmd>Telescope coc workspace_symbols<cr>", "search symbols in project" },
@@ -163,4 +162,6 @@ wk.register({
 		s = { "<cmd>lua require('spectre').open_visual()<cr>", "search" }
 	},
 	q = { "<cmd>q<cr>", "close window" },
+	-- refactor this
+	t = { "<cmd>lua require('refactoring').select_refactor()<cr>", "refactor this"}, -- buggy
 }, { mode = "v" })
