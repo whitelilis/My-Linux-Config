@@ -31,10 +31,12 @@ dap.configurations.cpp = {
     type = "cppdbg",
     request = "launch",
     program = function()
-      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+	    return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
     end,
     cwd = '${workspaceFolder}',
     stopAtEntry = true,
+    MIMode = 'lldb',
+    MIDebuggerPath = 'lldb',
   },
 }
 
