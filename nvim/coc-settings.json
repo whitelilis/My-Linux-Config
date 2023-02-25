@@ -20,5 +20,6 @@
   "Lua.telemetry.enable": true,
   "semanticTokens.enable": true,
   "imselect.enableStatusItem": true,
-  "inlayHint.enable": false
+  "inlayHint.enable": false,
+  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/15.0.6/clangd_15.0.6/bin/clangd"
 }
