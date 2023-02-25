@@ -43,6 +43,7 @@ wk.register({
 		-- leader p used for paste from system clipboard
 		r = { "<Plug>(coc-rename)", "rename" },
 		s = { "<cmd>Telescope coc workspace_symbols<cr>", "search symbols in project" },
+		t = { "<cmd>:make<cr>", "call make" },
 		x = { "<cmd>NvimTreeFindFile<cr>", "open file in dir" }, -- file tree extract
 		z = { "<cmd>Vista!!<cr>", "toggle vista navigator" }, -- code map zip
 
