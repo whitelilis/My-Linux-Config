@@ -84,3 +84,7 @@ let @j = 'ysiw`\<Esc>' " 在一个 word 两侧添加上 `，例如将 abc 变为
 " auto format
 " https://www.jvt.me/posts/2022/03/01/neovim-format-on-save/
 autocmd BufWritePre * call CocActionAsync('format')
+
+
+" ninja make
+:set makeprg=ninja\ -C\ build
