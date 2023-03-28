@@ -25,6 +25,16 @@ function dec(){
 	 decompressor decompress $@ | iconv -f gbk -t utf8
 }
 
+function dl(){
+    dec $@ | tail -n 80 ; date
+}
+
+function cleangit() {
+        git branch --merged | egrep -v "(^\*|master|main|dev)" | xargs git branch -d
+        git branch -r --merged | egrep -v "(^\*|master|main|dev)" | sed 's/origin\///' | xargs -n 1 git push origin --delete
+        git remote prune origin
+}
+
 function sc(){
 	tmux a || tmux
 }
@@ -35,6 +45,10 @@ function nj {
 
 function cn {
 	cmake -GNinja ..
+}
+
+function cnw {
+      cmake   -DCMAKE_CXX_INCLUDE_WHAT_YOU_USE="include-what-you-use;-Xiwyu;--error_always" -GNinja ..
 }
 
 export NVM_DIR="$HOME/.nvm"
@@ -65,3 +79,5 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 . "$HOME/.cargo/env"
+
+export LIBCLANG_PATH=/root/src/llvm-project/build/lib/libclang.so

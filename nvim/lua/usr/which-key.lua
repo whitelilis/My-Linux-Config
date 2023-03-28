@@ -34,16 +34,19 @@ wk.register({
 		h = { "<cmd>Telescope help_tags<cr>", "search vim manual" },
 		j = { "<cmd>Telescope emoji<cr>", "search emoji" },
 		k = { "<cmd>Telescope colorscheme<cr>", "colorscheme" },
-		m = { "<cmd>Telescope vim_bookmarks all<cr>", "search bookmarks in project" },
+		-- m = { "<cmd>Telescope vim_bookmarks all<cr>", "search bookmarks in project" },
+		m = { "<cmd>:make<cr>", "call make" },
 		o = { "<cmd>call Outline()<cr>", "search symbols in file" },
 		-- refactor
-		q = { "<cmd>lua require('refactoring').debug.printf({below = true})<cr>", "print current symbol under cursor"},
-		w = { "<cmd>lua require('refactoring').debug.print_var({ normal = true })<cr>", "print current symbol under cursor"},
-		e = { "<cmd>lua require('refactoring').debug.cleanup({})<cr>", "clean all print"},
+		q = { "<cmd>lua require('refactoring').debug.printf({below = true})<cr>",
+			"print current symbol under cursor" },
+		w = { "<cmd>lua require('refactoring').debug.print_var({ normal = true })<cr>",
+			"print current symbol under cursor" },
+		e = { "<cmd>lua require('refactoring').debug.cleanup({})<cr>", "clean all print" },
 		-- leader p used for paste from system clipboard
 		r = { "<Plug>(coc-rename)", "rename" },
 		s = { "<cmd>Telescope coc workspace_symbols<cr>", "search symbols in project" },
-		t = { "<cmd>:make<cr>", "call make" },
+		t = { "<cmd>:TodoTelescope<cr>", "show todo in telescope" },
 		x = { "<cmd>NvimTreeFindFile<cr>", "open file in dir" }, -- file tree extract
 		z = { "<cmd>Vista!!<cr>", "toggle vista navigator" }, -- code map zip
 
@@ -59,7 +62,6 @@ wk.register({
 		["9"] = { "<cmd>BufferLineGoToBuffer 9<cr>", "jump to buffer 9" },
 		["0"] = { "<cmd>BufferLineGoToBuffer 10<cr>", "jump to buffer 10" },
 	},
-
 	-- " 使用 space [number] 切换到第 [number] 个 window
 	['<space>'] = {
 		["1"] = { "<cmd>1wincmd  w <cr>", "jump to window 1" },
@@ -165,5 +167,5 @@ wk.register({
 	},
 	q = { "<cmd>q<cr>", "close window" },
 	-- refactor this
-	t = { "<cmd>lua require('refactoring').select_refactor()<cr>", "refactor this"}, -- buggy
+	t = { "<cmd>lua require('refactoring').select_refactor()<cr>", "refactor this" }, -- buggy
 }, { mode = "v" })
