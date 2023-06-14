@@ -44,7 +44,12 @@ require("packer").startup({
 		-- git 管理
 		use 'tpope/vim-fugitive' -- 显示 git blame，实现一些基本操作的快捷执行
 		use 'rhysd/git-messenger.vim' -- 利用 git blame 显示当前行的 commit message
-		use 'lewis6991/gitsigns.nvim' -- 显示改动的信息
+		use {
+		  'lewis6991/gitsigns.nvim',
+		  config = function()
+		    require('gitsigns').setup()
+		  end
+		}
 		-- 基于 telescope 的搜索
 		use 'nvim-telescope/telescope.nvim'
 		use { 'nvim-telescope/telescope-fzf-native.nvim',
